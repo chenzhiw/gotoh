@@ -11,7 +11,7 @@ static inline Vec** alloc_arr(size_t x, size_t y) {
     Vec **arr = (Vec**) malloc( x * sizeof(Vec*) );
     if (arr == NULL) return NULL;
     for (size_t i=0 ; i<x ; i++) {
-        arr[i] = (Vec*) malloc( y * sizeof(Vec) );
+        arr[i] = (Vec*) calloc( y , sizeof(Vec) );
     }
     return arr;
 }
